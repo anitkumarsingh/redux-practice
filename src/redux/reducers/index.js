@@ -1,10 +1,11 @@
 import characters from '../../mock/index.json';
+import {ADD_CHARACTERS} from '../actions';
 
 const characterReducer = (state = characters,action)=>{
 switch (action.type) {
-    case 'value':
-        
-        break;
+    case ADD_CHARACTERS:
+        const filterCharacters = state.filter(character =>character.id !== action.id)
+        return filterCharacters;
 
     default:
         return state
