@@ -1,18 +1,17 @@
-import React,{Component} from 'react';
-import CharacterList from '../components/characters';
-import HerosList from '../components/heros';
-import HerosStrength from '../components/heroStrength'
+import React, { Component } from 'react';
+import Header from '../components/blocks/header';
+import Main from '../routes';
 
-class App extends Component{
-    render(){
-        return(
-            <>
-            <h2>Supper squad</h2>
-            <CharacterList/>
-            <HerosList/>
-            <HerosStrength/>
-            </>
-        )
-    }
+const App = () => {
+    return (
+        <>
+            <Header />
+            <div className="container p-5">
+                <Main />
+            </div>
+
+        </>
+    )
 }
+
 export default App;
