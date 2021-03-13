@@ -7,7 +7,12 @@ const Header = () => {
             <ul className="navbar-nav">
                 <li className="nav-item active">
                     <div className="nav-link">
-                        <Link path="/">Home</Link>
+                        <Link to="/">Home</Link>
+                    </div>
+                </li>
+                <li className="nav-item active">
+                    <div className="nav-link">
+                        <Link to="/food-receipe">Food Finder</Link>
                     </div>
                 </li>
 
