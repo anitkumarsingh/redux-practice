@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import CharacterList from '../components/characters';
 import HerosList from '../components/heros';
+import HerosStrength from '../components/heroStrength'
 
 class App extends Component{
     render(){
@@ -9,6 +10,7 @@ class App extends Component{
             <h2>Supper squad</h2>
             <CharacterList/>
             <HerosList/>
+            <HerosStrength/>
             </>
         )
     }

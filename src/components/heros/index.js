@@ -3,15 +3,16 @@ import {connect} from 'react-redux'
 import {removeCharacterById} from '../../redux/actions'
 import Card from '../characters/card';
 
-
 class Heros extends Component{
-    
     render(){
-        console.log('hero state',this.props.removeCharacterById)
         return(
             <>
-            <h2>Heros Squad</h2>
-            <Card data={this.props.heros} addCharacter={this.props.removeCharacterById}/>
+            {this.props.heros.length> 0 && (
+                <>
+                  <h2>Your Heros Squad:</h2>
+                  <Card data={this.props.heros} addRemoveCharacter={this.props.removeCharacterById}/>
+               </>
+            )}
             </>
         )
     }

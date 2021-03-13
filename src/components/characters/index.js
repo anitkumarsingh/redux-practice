@@ -10,7 +10,7 @@ class CharacterList extends React.Component{
         return(
             <div>
                 <h2>Characters</h2>
-                <Card data={this.props.characters} addCharacter={this.props.getCharacterById}/>
+                <Card data={this.props.characters} addRemoveCharacter={this.props.getCharacterById} operation="Add"/>
             </div>
         )
     }
