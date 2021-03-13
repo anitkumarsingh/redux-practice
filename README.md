@@ -1,1 +1,1 @@
-# redux-practice
+# Supper Sqaud - redux practice
