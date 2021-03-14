@@ -1,1 +1,1 @@
-# Supper Heros - redux practice
+# Redux practice

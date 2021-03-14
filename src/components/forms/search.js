@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { makeHttpRequest } from '../../utils'
+import { makeHttpRequest } from '../../utils';
+import { useDispatch } from 'react-redux';
+import { setReciepe } from '../../redux/actions'
 
 const ReceipeCard = ({ data }) => {
     return (
@@ -21,10 +23,12 @@ const ReceipeCard = ({ data }) => {
     )
 }
 
-const Search = () => {
+const Search = (props) => {
     const [ingredient, setIndiredent] = useState('');
     const [receipe, setReceipe] = useState('');
     const [fetchedData, setFetchedData] = useState([]);
+    const dispatchRecipes = useDispatch();
+
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -34,7 +38,8 @@ const Search = () => {
         }
         try {
             const { results } = await makeHttpRequest('api', 'get', payload)
-            setFetchedData(results)
+            setFetchedData(results);
+            dispatchRecipes(setReciepe(results));
         } catch (error) {
             console.log(error.message)
         }
@@ -65,8 +70,8 @@ const Search = () => {
                     {
                         fetchedData && fetchedData.map((food, index) => {
                             return (
-                                <div className="col-md-6 clearfix">
-                                    <ReceipeCard data={food} key={index} />
+                                <div className="col-md-6 clearfix" key={index}>
+                                    <ReceipeCard data={food} />
                                 </div>
                             )
                         })
