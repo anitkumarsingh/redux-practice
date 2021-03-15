@@ -1,8 +1,12 @@
+import { IMG_FLIP } from '../../constant/api';
+
+
 export const ADD_CHARACTERS = "ADD_CHARACTERS";
 export const REMOVE_CHARACTER = "REMOVE_CHARACTER";
 export const SET_RECIEPE = "SET_RECIEPE";
-export const ADD_FAV_RECIPES = "ADD_FAV_RECIPES"
-export const REMOVE_FAV_RECIPES = "REMOVE_FAV_RECIPES"
+export const ADD_FAV_RECIPES = "ADD_FAV_RECIPES";
+export const REMOVE_FAV_RECIPES = "REMOVE_FAV_RECIPES";
+export const RECEIVE_MEMES = "RECEIVE_MEMES";
 
 export const getCharacterById = (id) => {
     const action = {
@@ -39,5 +43,23 @@ export const removeFavRecipes = (title) => {
     return {
         type: REMOVE_FAV_RECIPES,
         title
+    }
+}
+
+const receiveMemes = (json) => {
+    const { memes } = json.data
+    return {
+        type: RECEIVE_MEMES,
+        memes
+    }
+}
+
+const fetchMemesJson = () => {
+    return fetch(`${IMG_FLIP}/get_memes`).then(response => response.json())
+}
+export const fetchMemes = () => {
+    return function (dispatch) {
+        return fetchMemesJson()
+            .then(result => dispatch(receiveMemes(result)))
     }
 }

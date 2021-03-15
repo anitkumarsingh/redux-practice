@@ -1,4 +1,4 @@
-import { BASE_URL } from '../constant/api';
+import { BASE_URL, IMG_FLIP } from '../constant/api';
 
 const makeHttpRequest = async (url, method, payload) => {
     try {
@@ -14,6 +14,19 @@ const makeHttpRequest = async (url, method, payload) => {
 
     }
 }
+const fetchImgFlipMemes = async (url, method) => {
+    try {
+        const res = await fetch(`${IMG_FLIP}/${url}`, {
+            method
+        })
+        const { memes } = res.data;
+        console.log('fun', res)
+        return { memes }
+    } catch (error) {
+
+    }
+}
 export {
-    makeHttpRequest
+    makeHttpRequest,
+    fetchImgFlipMemes
 }

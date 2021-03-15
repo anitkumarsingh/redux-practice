@@ -23,6 +23,11 @@ const Header = () => {
                         <Link to="/fav-recipes">Favourite Recipes</Link>
                     </div>
                 </li> : null}
+                <li className="nav-item active">
+                    <div className="nav-link">
+                        <Link to="/memes">Memes Generator</Link>
+                    </div>
+                </li>
             </ul>
         </nav>
     )

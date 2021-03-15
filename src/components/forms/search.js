@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { makeHttpRequest } from '../../utils';
 import { useDispatch, useSelector } from 'react-redux';
 import { setReciepe, addFavRecipes, } from '../../redux/actions'
-import { Link } from 'react-router-dom';
+
 
 const ReceipeCard = ({ data }) => {
     const [favourite, setFavourite] = useState(false);
