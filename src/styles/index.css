@@ -35,6 +35,14 @@
     object-fit: cover;
     border-radius: 10%;
 }
+.myMemes-img{
+    width:400px;
+    position: relative;
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 10px;
+    margin: 5px;
+}
 .memes-txt{
     text-align: center;
     width: 250px;

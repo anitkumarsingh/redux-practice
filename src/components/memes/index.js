@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 const MemesItem = ({ memes, postHandler }) => {
     const [hovered, setHovered] = useState(false);
-
     return (
         <div
             onMouseEnter={() => setHovered(true)}
