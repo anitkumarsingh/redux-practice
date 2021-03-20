@@ -1,4 +1,4 @@
-import { IMG_FLIP } from '../../constant/api';
+import { IMG_FLIP_URL } from '../../constant/api';
 
 
 export const ADD_CHARACTERS = "ADD_CHARACTERS";
@@ -55,7 +55,7 @@ const receiveMemes = (json) => {
 }
 
 const fetchMemesJson = () => {
-    return fetch(`${IMG_FLIP}/get_memes`).then(response => response.json())
+    return fetch(`${IMG_FLIP_URL}/get_memes`).then(response => response.json())
 }
 export const fetchMemes = () => {
     return function (dispatch) {
