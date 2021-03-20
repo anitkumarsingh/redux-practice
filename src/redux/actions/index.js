@@ -7,6 +7,7 @@ export const SET_RECIEPE = "SET_RECIEPE";
 export const ADD_FAV_RECIPES = "ADD_FAV_RECIPES";
 export const REMOVE_FAV_RECIPES = "REMOVE_FAV_RECIPES";
 export const RECEIVE_MEMES = "RECEIVE_MEMES";
+export const ADD_MEMES = "ADD_MEMES";
 
 export const getCharacterById = (id) => {
     const action = {
@@ -43,6 +44,13 @@ export const removeFavRecipes = (title) => {
     return {
         type: REMOVE_FAV_RECIPES,
         title
+    }
+}
+
+export const addMemes = (meme) => {
+    return {
+        type: ADD_MEMES,
+        meme
     }
 }
 

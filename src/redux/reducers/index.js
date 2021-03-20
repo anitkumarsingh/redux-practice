@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { characterReducer } from './characterReducer';
 import { heroReducer } from './heroReducer';
 import { setReciepeReducer, favRecipesReducer } from './reciepeReducer';
-import { getMemes } from './memesReducer';
+import { getMemes, addMemes } from './memesReducer';
 
 
 const rootReducers = combineReducers({
@@ -10,6 +10,7 @@ const rootReducers = combineReducers({
     heros: heroReducer,
     recipes: setReciepeReducer,
     favRecipes: favRecipesReducer,
-    memes: getMemes
+    memes: getMemes,
+    myMemes: addMemes
 })
 export default rootReducers;

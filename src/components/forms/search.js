@@ -76,8 +76,6 @@ const Search = (props) => {
                     <div className="col-md-12 text-center">
                         <p><b>We have found <i>{fetchedData.length}</i> results</b></p>
                     </div>
-
-
                     {
                         fetchedData && fetchedData.map((food, index) => {
                             return (
