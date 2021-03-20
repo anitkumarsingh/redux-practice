@@ -1,5 +1,5 @@
 import { IMG_FLIP_URL } from '../../constant/api';
-
+import { imgFlip } from '../../config';
 
 export const ADD_CHARACTERS = "ADD_CHARACTERS";
 export const REMOVE_CHARACTER = "REMOVE_CHARACTER";
@@ -47,7 +47,7 @@ export const removeFavRecipes = (title) => {
     }
 }
 
-export const addMemes = (meme) => {
+const addMemes = (meme) => {
     return {
         type: ADD_MEMES,
         meme
@@ -69,5 +69,30 @@ export const fetchMemes = () => {
     return function (dispatch) {
         return fetchMemesJson()
             .then(result => dispatch(receiveMemes(result)))
+    }
+}
+const postMemesJson = (params) => {
+    params["username"] = imgFlip.USER_NAME;
+    params["password"] = imgFlip.PASSWORD;
+
+    const bodyParams = Object.keys(params).map(key => {
+        return encodeURIComponent(key) + "=" + encodeURIComponent(params[key])
+    }).join("&")
+
+    console.log('as', bodyParams)
+    return fetch(`${IMG_FLIP_URL}/caption_image`, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: bodyParams
+    }).then(response => response.json());
+}
+
+export const createdMemes = (new_object_params) => {
+    console.log('final', new_object_params)
+    return function (dispatch) {
+        return postMemesJson(new_object_params)
+            .then(result => dispatch(addMemes(result)))
     }
 }

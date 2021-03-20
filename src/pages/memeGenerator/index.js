@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMemes, addMemes } from '../../redux/actions';
+import { fetchMemes, createdMemes } from '../../redux/actions';
 import MemesItem from '../../components/memes';
 import MemesForm from '../../components/forms/memes';
 import '../../styles/index.css'
@@ -23,9 +23,9 @@ const MemeGenerator = () => {
         const memesObject = {
             template_id: id,
             text0,
-            text1
+            text1,
         }
-        dispatch(addMemes(memesObject))
+        dispatch(createdMemes(memesObject))
     }
 
     console.log(memes)
