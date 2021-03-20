@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 
 class HerosStats extends Component{
- calculateStrength = () =>{
+    calculateStrength = () =>{
         let strength = 0
         this.props.heros.forEach(i => strength += i.strength)
        return strength

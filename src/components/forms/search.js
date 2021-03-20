@@ -19,14 +19,12 @@ const ReceipeCard = ({ data }) => {
                 <img className="card-img-top" src={data.thumbnail} alt="Card cap" />
                 <div className="card-body">
                     <h5 className="card-title">{data.title} {favourite ? <span>&#9733;</span> : <span onClick={markFavRecipe}>&#9734;</span>}</h5>
-
                 </div>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item"><b>Ingredients:</b> {data.ingredients}</li>
                 </ul>
                 <div className="card-body" >
                     <a href={data.href} className="card-link">Read More</a>
-                    {/* <button onClick={() => dispatchRecipes(removeFavRecipes(data))}>Mark as un-favourite</button> */}
                 </div>
             </div>
         </div>

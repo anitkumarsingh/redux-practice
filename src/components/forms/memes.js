@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Memes = ({ submitHandler, setText0, setText1, ...props }) => {
+const Memes = ({ setText0, setText1 }) => {
     return (
         <div>
             <div className="text-center">

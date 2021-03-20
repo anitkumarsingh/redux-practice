@@ -5,12 +5,12 @@ import HerosStrength from '../../components/heroStrength';
 
 const SuperSquad = () => {
     return (
-        <div>
+        <>
             <h2>Supper squad</h2>
             <CharacterList />
             <HerosList />
             <HerosStrength />
-        </div>
+        </>
     )
 }
 export default SuperSquad

@@ -14,11 +14,8 @@ const MemeGenerator = () => {
     const memes = useSelector(state => state.memes);
     const myMemes = useSelector(state => state.myMemes);
 
-    console.log('add mess', useSelector(state => state))
-
     useEffect(() => {
         dispatch(fetchMemes())
-
     }, [])
 
     const submitHandler = (e, id) => {
@@ -38,7 +35,6 @@ const MemeGenerator = () => {
             <MemesForm setText0={setText0} setText1={setText1} />
             {memes && memes.slice(0, visibleMemes).map((m, index) => <MemesItem memes={m} key={index} text0={text0} text1={text1} postHandler={(e) => submitHandler(e, m.id)} />)}
             {visibleMemes <= memes.length ? <p onClick={() => setVisibleMemes(visibleMemes + 10)} className="memes-btn">Load More Memes...</p> : <p>Nothing to show</p>}
-
         </div>
     )
 }
